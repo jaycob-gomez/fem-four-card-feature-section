@@ -80,16 +80,11 @@ h1 span {
     --gap: 2rem;
     display: grid;
     gap: var(--gap);
-    grid-auto-columns: 1fr;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 850px) {
     .grid {
-        grid-template-areas: 
-        "... two ... "
-        "one two four"
-        "one three four"
-        "... three ...";
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -99,6 +94,11 @@ h1 span {
     flex: 1;
 }
 
+.col {
+    display: grid;
+    gap: var(--gap);
+    align-content: center;
+}
 
 .card {
     --border-radius: 0.325rem;
@@ -106,19 +106,6 @@ h1 span {
     border-radius: var(--border-radius);
     border-top: var(--border-radius) solid;
     box-shadow: 0 1rem 1.5rem -0.5rem rgb(0 0 0 / 0.2);
-}
-
-.card:nth-child(1) {
-    grid-area: one;
-}
-.card:nth-child(2) {
-    grid-area: two;
-}
-.card:nth-child(3) {
-    grid-area: three;
-}
-.card:nth-child(4) {
-    grid-area: four;
 }
 
 .card__title {
@@ -143,4 +130,9 @@ h1 span {
 }
 .border-color-blue {
     border-color: var(--blue);
+}
+
+.attribution {
+    text-align: center;
+    margin-top: 5em;
 }
